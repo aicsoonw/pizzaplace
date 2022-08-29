@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cartDisplay;
 use App\Http\Controllers\showPizzaCardController;
+use App\Http\Controllers\showStoreFrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::get('/card/{id}', [showPizzaCardController::class, 'show']);
 Route::get('/play', function () {
     return view('play');
 });
+
+
+Route::get('/front', [showStoreFrontController::class, 'show']);

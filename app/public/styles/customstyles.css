@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+td {
+    padding-right: 80px
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #fefdf8;
@@ -94,4 +98,15 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 7vw;
+}
+#grid > div {
+    font-size: 5vw;
+    padding: 1em;
 }
