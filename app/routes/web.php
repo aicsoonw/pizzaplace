@@ -25,3 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/card/{id}', [showPizzaCardController::class, 'show']);
+
+Route::get('/play', function () {
+    return view('play');
+});

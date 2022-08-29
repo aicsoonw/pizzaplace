@@ -1,0 +1,15 @@
+<?php
+
+$count = 1;
+
+?>
+
+@if ($count === 1)
+    <p>One item</p>
+@elseif ($count > 1)
+    <p>Multiple items</p>
+@else
+    <p>What</p>
+@endif
+
+<p>XXX</p>
