@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cartDisplay;
 use App\Http\Controllers\showPizzaCardController;
 use App\Http\Controllers\showStoreFrontController;
+use App\Http\Controllers\storeFronTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,5 @@ Route::get('/play', function () {
 
 
 Route::get('/front', [showStoreFrontController::class, 'show']);
+
+Route::get('/fronttest', [storeFronTestController::class, 'show']);

@@ -9,7 +9,7 @@
                     <div class="card__overlay">
                         <div class="card__header">
                             <div class="card__header-text">
-                                <h3 class="card__title">{{ $Item->name }}</h3>
+                                <h3 class="card__title">{{ $Item->name }}</h3><span>{{ $Item->price }}₽</span>
                                 <span class="card__status"><button>Add to cart!</button></span>
                             </div>
                         </div>
