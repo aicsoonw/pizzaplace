@@ -8,7 +8,7 @@ use App\Models\Item;
 class getItemsFromDBController extends Controller
 {
     public function getItems(){
-/*
+
         $conn = mysqli_connect('localhost', 'root', 'sj6-fs&-xxfw', 'laravel');
 
         //Вывод ошибки в случае провала подключения к БД
@@ -31,19 +31,6 @@ class getItemsFromDBController extends Controller
         }
 
         echo json_encode($dataFromDB);
-*/
-        $dataFromDB = [];
 
-        $items = Item::all();
-
-        foreach ($items as $item) {
-            array_push($dataFromDB, array(
-                'dbid' => $item->iditem,
-                'name' => $item->name,
-                'price' => $item->price
-            ));
-        }
-
-        echo json_encode($dataFromDB);
     }
 }

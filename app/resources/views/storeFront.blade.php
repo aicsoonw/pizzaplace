@@ -1,4 +1,4 @@
-<link href="/styles/customstyles.css" rel="stylesheet">
+<link href="/styles/customstylesTEST.css" rel="stylesheet">
 <script src="qs/getItemsAJAXLogic.js"></script>
 <script src="qs/getCartFromLS.js"></script>
 <script src="qs/loadInitialCartToLS.js"></script>
