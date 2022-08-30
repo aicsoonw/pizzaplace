@@ -16,11 +16,11 @@ use App\Http\Controllers\storeFronTestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('startpage');
 });
-
+*/
 Route::get('/cart', cartDisplay::class);
 Auth::routes();
 
@@ -32,7 +32,12 @@ Route::get('/play', function () {
     return view('play');
 });
 
-
-Route::get('/front', [showStoreFrontController::class, 'show']);
+Route::get('/', [showStoreFrontController::class, 'show']);
 
 Route::get('/fronttest', [storeFronTestController::class, 'show']);
+
+Route::get('/getFromDBTEST', [\App\Http\Controllers\getItemsFromDBTESTController::class, 'test']);
+
+Route::get('/WTWGetRoute', [\App\Http\Controllers\WTWGetController::class, 'test']);
+
+Route::get('/getItemsFromDB', [\App\Http\Controllers\getItemsFromDBController::class, 'getItems']);
