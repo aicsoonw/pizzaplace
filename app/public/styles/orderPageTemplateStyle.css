@@ -1,0 +1,15 @@
+.orderBlocks{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.errors {
+    color: #ff1a3c;
+}
+
+/*#cartDisplayOrderPage {*/
+/*    border: 1px solid black;*/
+/*    border-radius: 5px;*/
+/*    width: 300px;*/
+/*}*/

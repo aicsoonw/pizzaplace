@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="http://localhost:8000/styles/orderPageTemplateStyle.css" rel="stylesheet">
+    <script src="http://localhost:8000/qs/cartManipulations.js"></script>
+    <script src="http://localhost:8000/qs/renderCart.js"></script>
+</head>
+<body>  
+    <h3>Your cart</h3>
+    
+    <!-- your cart -->
+    <div class="orderBlocks" id="cartDisplayOrderPage"> 
+        <div id="singleItem">
+            <p>
+                Pepperoni pizza
+                <button>+</button>
+                <button>-</button>
+                1 349,97 ₽
+            </p>
+        </div>
+
+        <div id="singleItem">
+            <p>
+                Cheeze pizza
+                <button>+</button>
+                <button>-</button>
+                999,96 ₽
+            </p>
+        </div>
+
+        <div id="singleItem">
+            <p>
+                Can of coke
+                <button>+</button>
+                <button>-</button>
+                149,97 ₽
+            </p>
+        </div>
+    </div>
+
+    <h3>Your info</h3>
+    
+    <!-- fields -->
+    <div class="orderBlocks">
+        <p>
+            Name:
+            <input type="text" placeholder="Ivan Ivanov">
+        </p>
+
+        <p>
+            Phone:
+            +7 <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="(XXX)-XX-XX">
+        </p>
+
+        <p>
+            Address:
+            <input type="text">
+        </p>
+
+        <p>
+            Comments:
+            <input type="text">
+        </p>
+    </div>
+
+    <br>
+    <button>Submit</button>
+    
+    <div id="fields">
+    </div>
+</body>
+</html>

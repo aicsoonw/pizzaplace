@@ -1,0 +1,30 @@
+<script>
+    let text = '999222222';
+    let result = text.match(/[0-9]/g);
+    if (result.length <= 10) {
+        for (i = 0; i < result.length; i++){
+            if (i == 0) {
+                result[i]= '('+result[i];
+            }
+
+            if (i == 2) {
+                result[i]= result[i]+')';
+            }
+
+            if (i == 3) {
+                result[i]= '-'+result[i];
+            }
+
+            if (i == 6) {
+                result[i]= '-'+result[i];
+            }
+
+            if (i == 8) {
+                result[i]= '-'+result[i];
+            }
+        }
+        console.log(result.join(''));
+    } else {
+        console.log('Phone number chan only be 10 digits long');
+    }
+</script>

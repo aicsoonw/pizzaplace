@@ -41,3 +41,13 @@ Route::get('/getFromDBTEST', [\App\Http\Controllers\getItemsFromDBTESTController
 Route::get('/WTWGetRoute', [\App\Http\Controllers\WTWGetController::class, 'test']);
 
 Route::get('/getItemsFromDB', [\App\Http\Controllers\getItemsFromDBController::class, 'getItems']);
+
+Route::get('/order', [\App\Http\Controllers\orderPageController::class, 'index']);
+
+//Route::get('/test', [\App\Http\Controllers\requestTestController::class, 'store']);
+
+Route::post('/test', [\App\Http\Controllers\requestTestController::class, 'store']);
+
+Route::get('/teest', function (){
+    return view('testPost');
+});

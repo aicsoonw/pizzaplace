@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Item;
-
 class getItemsFromDBController extends Controller
 {
     public function getItems(){
