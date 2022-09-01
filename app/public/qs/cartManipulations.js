@@ -25,3 +25,21 @@ function cartItemDecr(itemInput){
 
     renderCartOrderPage();
 }
+
+function checkCartForEmpty(){
+    cartObj = JSON.parse(localStorage.getItem('cart'));
+
+    length = cartObj.length;
+
+    var counter=0;
+
+    for (let i in cartObj) {
+        if (cartObj[i]['count'] < 1) {
+            counter++;
+        }
+    }
+
+    if (counter === length){
+        return true;
+    }
+}

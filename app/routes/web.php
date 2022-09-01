@@ -51,3 +51,5 @@ Route::post('/test', [\App\Http\Controllers\requestTestController::class, 'store
 Route::get('/teest', function (){
     return view('testPost');
 });
+
+Route::post('/postOrder',[\App\Http\Controllers\createOrderController::class, 'init']);

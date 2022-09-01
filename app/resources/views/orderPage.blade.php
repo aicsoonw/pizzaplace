@@ -13,6 +13,7 @@
     <link href="styles/orderPageTemplateStyle.css" rel="stylesheet">
     <script src="qs/orderFieldsChecks.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/qs/createOrder.js"></script>
     <!--
     <script>
         $(document).ready(function(){
@@ -45,7 +46,7 @@
     <div class="orderBlocks">
         <p>
             Имя:
-            <input id="nameInput" type="text" placeholder="Ivan Ivanov" onkeyup="checkName()">
+            <input id="nameInput" type="text" placeholder="Ivan Ivanov" onkeyup="validateNameField()">
 
             <!-- potential error -->
             <span class="errors" id="nameError">
@@ -55,7 +56,7 @@
 
         <p>
             Номер телефона:
-            +7 <input onkeyup="checkPhoneNum()" id="phoneInput" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="(XXX)-XX-XX">
+            +7 <input onkeyup="checkPhoneNum()" id="phoneInput" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="(XXX)-XXX-XX-XX">
 
             <!-- potential error -->
             <span class="errors" id="phoneError">
@@ -65,7 +66,7 @@
 
         <p>
             Адресс:
-            <input id="addressInput" onkeyup="checkAddress()" type="text">
+            <input id="addressInput" onkeyup="validateAddrField()" type="text">
 
             <!-- potential error -->
             <span class="errors" id="addressError">
@@ -80,7 +81,7 @@
     </div>
 
     <br>
-    <button>Оформить заказ</button>
+    <button onclick="postORDER()">Оформить заказ</button>
 
     <div id="fields">
     </div>
