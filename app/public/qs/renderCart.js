@@ -23,6 +23,7 @@ function renderCartOrderPage(){
                         ${cartObj[i]['name']}
                         <button onclick="cartItemIncr('${cartObj[i]['name']}')">+</button>
                         <button onclick="cartItemDecr('${cartObj[i]['name']}')">-</button>
+                        <button onclick="clearItem('${cartObj[i]['name']}')">Удалить</button>
                         ${ (((Number(cartObj[i]['price']) * 100) * Number(cartObj[i]['count'])) / 100).toFixed(2) } ₽
                     </p>
                 </div>

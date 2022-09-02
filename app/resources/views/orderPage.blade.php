@@ -1,38 +1,8 @@
-<head>
-    <title>
-        Оформление заказа
-    </title>
-    <script src="qs/getItemsAJAXLogic.js"></script>
-    <script src="qs/getCartFromLS.js"></script>
-    <script src="qs/loadInitialCartToLS.js"></script>
-    <script src="qs/addToCart.js"></script>
-    <script src="qs/clearCart.js"></script>
-    <script src="qs/renderCart.js"></script>
-    <script src="qs/cartManipulations.js"></script>
-    <script src="qs/renderCart.js"></script>
-    <link href="styles/orderPageTemplateStyle.css" rel="stylesheet">
-    <script src="qs/orderFieldsChecks.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/qs/createOrder.js"></script>
-    <!--
-    <script>
-        $(document).ready(function(){
-            $("button").click(function(){
-                $.post("/test",
-                    {
-                        cart: JSON.stringify(localStorage.getItem('cart')),
-                        name: document.getElementById('nameInput').value,
-                        phone: document.getElementById('phoneInput').value.match(/[0-9]/g).join('')
-                    },
-                    function(data,status){
-                        alert("Data: " + data + "\nStatus: " + status);
-                    });
-            });
-        });
-    </script>
-    -->
-</head>
-<body onload="renderCartOrderPage()">
+@extends('layouts.store')
+
+@section('title', 'Pizzaplace!')
+
+@section('content')
     <h2>Оформление заказа</h2>
     <h3>Ваша корзина</h3>
 
@@ -78,6 +48,9 @@
             Комментарии к заказу:
             <input type="text">
         </p>
+
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+
     </div>
 
     <br>
@@ -85,4 +58,4 @@
 
     <div id="fields">
     </div>
-</body>
+@endsection

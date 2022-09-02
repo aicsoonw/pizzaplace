@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    background-color: #fefdf8;
+    background-color: #ffffff;
 }
 
 .cards {
@@ -94,4 +94,41 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
+}
+
+.card-body{
+    z-index: 5;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.card-image{
+    position: relative;
+    height: 250px;
+    top: 10px;
+    left: 6px;
+}
+
+/*.card-panel{*/
+/*    z-index: 1;*/
+/*    !*position: absolute;*!*/
+/*    top: 200px;*/
+/*    background-color: rgb(255, 231, 205);*/
+/*    border-radius: 25px;*/
+/*    width: 250px;*/
+/*    height: 109px;*/
+/*    overflow: hidden;*/
+/*}*/
+
+.wtf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0;
+    list-style-type: none;
 }

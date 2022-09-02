@@ -13,7 +13,8 @@ td {
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    background-color: #ffe1ca;
+    background-color: #ffffff;
+    margin: 0;
 }
 
 .cards {
@@ -27,7 +28,7 @@ body {
 }
 
 .card {
-    position: relative;
+    position: absolute;
     display: block;
     height: 100%;
     border-radius: calc(var(--curve) * 1px);
@@ -77,4 +78,41 @@ body {
 #grid > div {
     font-size: 5vw;
     padding: 1em;
+}
+
+.card-body{
+    z-index: 5;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.card-image{
+    position: relative;
+    height: 250px;
+    top: 10px;
+    left: 50px;
+}
+
+.card-panel{
+    z-index: 1;
+    position: absolute;
+    top: 200px;
+    background-color: rgb(255, 231, 205);
+    border-radius: 25px;
+    width: 248px;
+    height: 109px;
+    /*overflow: hidden;*/
+}
+
+.wtf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0;
+    list-style-type: none;
 }

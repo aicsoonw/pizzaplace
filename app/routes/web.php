@@ -16,40 +16,17 @@ use App\Http\Controllers\storeFronTestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('startpage');
-});
-*/
-Route::get('/cart', cartDisplay::class);
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/card/{id}', [showPizzaCardController::class, 'show']);
-
-Route::get('/play', function () {
-    return view('play');
-});
-
+// our main page
 Route::get('/', [showStoreFrontController::class, 'show']);
 
-Route::get('/fronttest', [storeFronTestController::class, 'show']);
-
-Route::get('/getFromDBTEST', [\App\Http\Controllers\getItemsFromDBTESTController::class, 'test']);
-
-Route::get('/WTWGetRoute', [\App\Http\Controllers\WTWGetController::class, 'test']);
-
+// retrieving data from items table route
 Route::get('/getItemsFromDB', [\App\Http\Controllers\getItemsFromDBController::class, 'getItems']);
 
+// order page
 Route::get('/order', [\App\Http\Controllers\orderPageController::class, 'index']);
 
-//Route::get('/test', [\App\Http\Controllers\requestTestController::class, 'store']);
-
-Route::post('/test', [\App\Http\Controllers\requestTestController::class, 'store']);
-
-Route::get('/teest', function (){
-    return view('testPost');
-});
-
-Route::post('/postOrder',[\App\Http\Controllers\createOrderController::class, 'init']);
+// posting / inserting data to DB
+Route::post('/postOrder', [\App\Http\Controllers\createOrderController::class, 'init']);

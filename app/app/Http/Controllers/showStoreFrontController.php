@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Models\Item;
 
+//out show main page (store Front) Controller
+//gets list of items from DB using Eloquent ORM model laravel concept
 class showStoreFrontController extends Controller
 {
     public function show(){
-        //dd(Item::all());
-        $items = Item::all();
-        //dd($items);
-        return view('storeFront', compact('items'));
+        $items = Item::all();                                       //Eloquent ORM Model
+        return view('storeFront', compact('items'));  //return view (storeFront.blade.php)
     }
 }
