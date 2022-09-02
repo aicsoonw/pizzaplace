@@ -20,45 +20,23 @@ class createOrderController extends Controller
 
         $freshOrder0 = $order->fresh();
 
-//        dd($freshOrder0->idorders); // latest order id
-        echo $freshOrder0->idorders . "<BR>\n";
-//        dd($request->cart);
+        echo $freshOrder0->idorders . "\r\n";
 
         $cartDESERT = json_decode(json_decode($request->cart)) ; // cart deserialized
 
-//        var_export($cartDESERT); echo "<br>";
+        foreach ($cartDESERT as $cartitem) {                                        // loop through cart
+            if ($cartitem->count > 0) {                                             // если у объекта корзины колво больше 0
 
-//        dd($cartDESERT);
-
-//        $ItemHere = Item::all();
-
-        foreach ($cartDESERT as $cartitem) {                                        //loop through cart
-            if ($cartitem->count > 0) {                                             //если у объекта корзины колво больше 0
-
-                echo $cartitem->name . ": " . $cartitem->count . "<BR>\n";
-                foreach (Item::where('name', $cartitem->name)->get() as $items) {                                   //пытаемся найти id
-                    var_export($items->iditems);
-//                    if ($items->name == $cartitem->name) {
-//                        $itemno = $items->iditems;
-//                    }
+                echo $cartitem->name . ": " . $cartitem->count . "\r\n";
+                foreach (Item::where('name', $cartitem->name)->get() as $items) {   // пытаемся найти id
                     $itemno = $items->iditems;
                 }
-                var_export($itemno);
                 $cart = new CartDB;
                 $cart->order_id = $freshOrder0->idorders;
                 $cart->item_id = $itemno;
                 $cart->qnt = $cartitem->count;
-                $cart->refresh();                $cart->save();
-
-
+                $cart->save();
             }
-            echo 'end forech <BR> \n';
         }
-
-//        foreach ($freshOrder0 as $freshorder) {
-//            dd($freshorder->idorder);
-//        }
-//        echo var_export($request->all());
-
     }
 }
