@@ -1,5 +1,5 @@
 function clearCart(){
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj){
         cartObj[i]['count'] = 0;
