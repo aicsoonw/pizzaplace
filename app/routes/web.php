@@ -5,6 +5,7 @@ use App\Http\Controllers\cartDisplay;
 use App\Http\Controllers\showPizzaCardController;
 use App\Http\Controllers\showStoreFrontController;
 use App\Http\Controllers\storeFronTestController;
+use \App\Http\Controllers\adminPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,8 @@ Route::get('/order', [\App\Http\Controllers\orderPageController::class, 'index']
 
 // posting / inserting data to DB
 Route::post('/postOrder', [\App\Http\Controllers\createOrderController::class, 'init']);
+
+//test rout for our admin page
+Route::get('/admin', [adminPageController::class, 'view']);
+
+Route::get('/admin/{id}', [adminPageController::class, 'show']);

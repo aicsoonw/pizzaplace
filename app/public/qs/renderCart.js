@@ -1,7 +1,7 @@
 function renderCart(){
-    document.getElementById('cart').innerHTML = '';
+    // document.getElementById('cart').innerHTML = '';
 
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj) {
         if (cartObj[i]['count'] > 0) {
@@ -13,12 +13,12 @@ function renderCart(){
 function renderCartOrderPage(){
     document.getElementById('cartDisplayOrderPage').innerHTML = '';
 
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj) {
         if (cartObj[i]['count'] > 0) {
             document.getElementById('cartDisplayOrderPage').innerHTML += `
-                <div id="singleItem">
+                <div class="singleItem">
                     <p>
                         ${cartObj[i]['name']}
                         <button onclick="cartItemIncr('${cartObj[i]['name']}')">+</button>
@@ -30,4 +30,16 @@ function renderCartOrderPage(){
             `;
         }
     }
+
+    // if (checkCartForEmpty()) {
+    //     return 0;
+    // }
+
+    document.getElementById('cartDisplayOrderPage').innerHTML += `
+        <div id="cartTotal">
+            <p>
+                Сумма к оплате: ${ viewTotal() } ₽
+            </p>
+        </div>
+    `;
 }

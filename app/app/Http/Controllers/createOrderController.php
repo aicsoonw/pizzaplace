@@ -17,9 +17,7 @@ class createOrderController extends Controller
         $order->phone = $request->phone;
 
         $order->save();
-
         $freshOrder0 = $order->fresh();
-
         echo $freshOrder0->idorders . "\r\n";
 
         $cartDESERT = json_decode(json_decode($request->cart)) ; // cart deserialized
@@ -28,6 +26,7 @@ class createOrderController extends Controller
             if ($cartitem->count > 0) {                                             // если у объекта корзины колво больше 0
 
                 echo $cartitem->name . ": " . $cartitem->count . "\r\n";
+                $itemno = 0;
                 foreach (Item::where('name', $cartitem->name)->get() as $items) {   // пытаемся найти id
                     $itemno = $items->iditems;
                 }

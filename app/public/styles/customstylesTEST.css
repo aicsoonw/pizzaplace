@@ -116,3 +116,16 @@ body {
     padding: 0;
     list-style-type: none;
 }
+
+.test-box{
+    width: 70vw;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.test-order-items{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 6vw;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

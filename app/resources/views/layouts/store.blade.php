@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/styles/customstylesTEST.css" rel="stylesheet">
     <script src="qs/getItemsAJAXLogic.js"></script>
-    <script src="qs/getCartFromLS.js"></script>
     <script src="qs/loadInitialCartToLS.js"></script>
     <script src="qs/clearCart.js"></script>
     <script src="qs/renderCart.js"></script>
