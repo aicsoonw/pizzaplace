@@ -1,5 +1,5 @@
 function cartItemIncr(itemInput){
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj) {
         if (cartObj[i]['name'] == itemInput) {
@@ -13,7 +13,7 @@ function cartItemIncr(itemInput){
 }
 
 function cartItemDecr(itemInput){
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj) {
         if (cartObj[i]['name'] == itemInput) {
@@ -27,7 +27,7 @@ function cartItemDecr(itemInput){
 }
 
 function checkCartForEmpty(){
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     length = cartObj.length;
 
@@ -45,7 +45,7 @@ function checkCartForEmpty(){
 }
 
 function clearItem(itemnameIn){
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj){
         if (cartObj[i]['name'] === itemnameIn) {
@@ -59,7 +59,7 @@ function clearItem(itemnameIn){
 }
 
 function addToCart(itemNameInput = 'pepperoni-pizza'){
-    cartObj = JSON.parse(localStorage.getItem('cart'));
+    const cartObj = JSON.parse(localStorage.getItem('cart'));
 
     for (let i in cartObj){
         if (cartObj[i]['name'] == itemNameInput) {
