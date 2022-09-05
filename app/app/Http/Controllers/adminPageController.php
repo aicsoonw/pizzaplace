@@ -17,7 +17,7 @@ class adminPageController extends Controller
             dd('NOTHING TO SEE HERE');
         }
         //dd($s_order);
-        return view('admin', ['data'=>$s_order]);
+        return view('admin', ['data'=>$s_order, 'data2'=>CartDB::all(), 'data3'=>Item::all()]);
     }
 
     public function show($id){

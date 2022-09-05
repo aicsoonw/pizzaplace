@@ -5,20 +5,31 @@
 @section('content')
     <h1>ADMINKA</h1>
     <div class="test-box">
-        @foreach($data as $items)
-            <p>Order №{{$items->idorders}} | <a href="/admin/{{$items->idorders}}">EDIT</a> | DELETE</p>
+        @foreach($data as $orders)
+            <p>Order №{{$orders->idorders}} | <a href="/admin/{{$orders->idorders}}">EDIT</a> | DELETE</p>
 {{--            {{$items->idorders}}:--}}
-            {{$items->name}}: +7{{ $items->phone }}{{'@'}}{{ $items->where }}<br>
+            {{$orders->name}}: +7{{ $orders->phone }}{{'@'}}{{ $orders->where }}<br>
             <div class="test-order-items">
-                @php
-                    $order_item = App\Models\CartDB::where('order_id', $items->idorders)->select('item_id', 'qnt')->get();
+                @foreach($data2 as $items)
+                    @if($items->order_id === $orders->idorders)
+                        <p>
+                            @foreach($data3 as $what)
+                                @if($what->iditems === $items->item_id)
+                                    {{ $what->name }}
+                                @endif
+                            @endforeach
+                            : {{ $items->qnt }}</p>
+                    @endif
+                @endforeach
+{{--                @php--}}
+{{--                    $order_item = App\Models\CartDB::where('order_id', $items->idorders)->select('item_id', 'qnt')->get();--}}
 
-                    foreach ($order_item as $item) {
-                        $itemz = App\Models\Item::where('iditems', $item->item_id)->select('name')->get()->first();
-                        echo "<p>" . $itemz->name . ": " . $item->qnt . "<p>";
-                    }
+{{--                    foreach ($order_item as $item) {--}}
+{{--                        $itemz = App\Models\Item::where('iditems', $item->item_id)->select('name')->get()->first();--}}
+{{--                        echo "<p>" . $itemz->name . ": " . $item->qnt . "<p>";--}}
+{{--                    }--}}
 
-                @endphp
+{{--                @endphp--}}
             </div>
 
         @endforeach
