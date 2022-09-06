@@ -36,3 +36,9 @@ Route::post('/postOrder', [\App\Http\Controllers\createOrderController::class, '
 Route::get('/admin', [adminPageController::class, 'view']);
 
 Route::get('/admin/{id}', [adminPageController::class, 'show']);
+
+Route::get('/aT/{our}', [adminPageController::class, 'testFun']);
+
+Route::get('/sortBySUM', [adminPageController::class, 'sortBySUM']);
+
+Route::get('/sortByCNT', [adminPageController::class, 'sortByCNT']);
